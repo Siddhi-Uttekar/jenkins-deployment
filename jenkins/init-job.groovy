@@ -20,15 +20,15 @@ def job = jenkins.createProject(WorkflowJob, jobName)
 def pipelineScript = """
 pipeline {
     agent any
-    
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', 
-                url: 'https://github.com/PrashantPatil10178/CI-CD.git'
+                git branch: 'main',
+                url: 'https://github.com/Siddhi-Uttekar/jenkins-deployment.git'
             }
         }
-        
+
         stage('Build') {
             steps {
                 dir('app') {
@@ -36,7 +36,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Test') {
             steps {
                 dir('app') {
@@ -49,7 +49,7 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             // Cleanup any test servers
