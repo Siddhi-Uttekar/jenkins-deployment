@@ -1,4 +1,6 @@
-
+```bash
+docker ps
+```
 ```bash
 docker stop containerid
 ```
